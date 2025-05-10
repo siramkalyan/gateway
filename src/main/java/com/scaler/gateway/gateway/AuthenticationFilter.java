@@ -35,7 +35,7 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
             // Call auth server to validate token
             return webClientBuilder.build()
                     .get()
-                    .uri("http://10.116.0.198:9090/api/v1/auth/validate?token=" + token)
+                    .uri("http://192.168.28.128:9090/api/v1/auth/validate?token=" + token)
                     .retrieve()
                     .bodyToMono(Boolean.class)
                     .flatMap(isValid -> {
